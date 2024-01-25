@@ -37,14 +37,14 @@ export default function ItemPage({
     return (
       <>
         <List params={{ listNumber: 1 }}/>
-        <MyModal><Loading /></MyModal>
+        <MyModal onHide='first'><Loading /></MyModal>
       </>
     );
 
   return (
     <>
       <List params={{ listNumber: 1 }}/>
-      <MyModal name={modalInfo.name}>{modalInfo.text}</MyModal>
+      <MyModal onHide='first' name={modalInfo.name}>{modalInfo.text}</MyModal>
     </>
   )
 }

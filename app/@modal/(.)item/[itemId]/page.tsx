@@ -33,7 +33,7 @@ export default function ItemModal({
   }, [itemId]);
 
   if (!modalInfo)
-    return <MyModal><Loading /></MyModal>;
+    return <MyModal onHide='back'><Loading /></MyModal>;
   
-  return <MyModal name={modalInfo.name}>{modalInfo.text}</MyModal>;
+  return <MyModal onHide='back' name={modalInfo.name}>{modalInfo.text}</MyModal>;
 }

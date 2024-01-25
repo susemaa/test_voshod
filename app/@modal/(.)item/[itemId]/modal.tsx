@@ -5,15 +5,20 @@ import { useRouter } from 'next/navigation';
 
 export function MyModal({
     children,
+    onHide,
     name,
   }: {
     children: React.ReactNode;
+    onHide: string,
     name?: string;
   }) {
   const router = useRouter();
 
   function onDismiss() {
-    router.back();
+    if (onHide === 'back')
+      router.back();
+    if (onHide === 'first')
+      router.push('/list/1');
   }
 
   return (
