@@ -25,8 +25,7 @@ export default function ItemList({
                 <Link
                   href={`/item/${item.id}`}
                   scroll={false}
-                  passHref
-                  >
+                  passHref>
                     {item.name}
                 </Link>
               </td>

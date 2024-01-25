@@ -41,7 +41,7 @@ export default function List({
     <>
     <Container fluid className="mt-3">
       <Row>
-        <PageList pagesAmount={pagesAmount ?? 0}/>
+        <PageList pagesAmount={pagesAmount ?? 0} active={params.listNumber}/>
         <Col md={8}>
           <ItemList
             title={`Selected page: ${params.listNumber}`}
