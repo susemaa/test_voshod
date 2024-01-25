@@ -21,7 +21,6 @@ export default function ItemModal({
     const fetchItem = async (itemId : number) => {
       try {
         const res = await axios.get(`https://taxivoshod.ru/testapi/?w=item&id=${itemId}`);
-        console.log(res);
         if (res.data.result)
           setModalInfo({ name: res.data.name, text: res.data.text });
       } catch (e) {

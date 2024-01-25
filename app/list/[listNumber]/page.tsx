@@ -1,10 +1,8 @@
 'use client'
 
 import { useEffect, useState } from 'react';
-import { useRouter, useSearchParams } from 'next/navigation';
-import Link from 'next/link';
 import axios from 'axios';
-import { Table, Container, Row, Col, Modal } from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 import ItemList from '@/src/Components/ItemList';
 import PageList from '@/src/Components/PagesList';
 import E404 from '@/src/Components/E404';

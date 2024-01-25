@@ -22,10 +22,10 @@ export default function ItemPage({
     const fetchItem = async (itemId : number) => {
       try {
         const res = await axios.get(`https://taxivoshod.ru/testapi/?w=item&id=${itemId}`);
-        console.log(res);
         if (res.data.result)
           setModalInfo({ name: res.data.name, text: res.data.text });
       } catch (e) {
+        setModalInfo({ name: 'Error', text: `This item doesn't exist, try another one.`})
         console.error(e)
       }
     }
@@ -34,17 +34,12 @@ export default function ItemPage({
   }, [params.itemId]);
 
   if (!modalInfo)
-    return (
-      <>
-        <List params={{ listNumber: 1 }}/>
-        <MyModal onHide='first'><Loading /></MyModal>
-      </>
-    );
+    return <Loading />;
 
   return (
     <>
       <List params={{ listNumber: 1 }}/>
       <MyModal onHide='first' name={modalInfo.name}>{modalInfo.text}</MyModal>
     </>
-  )
+  );
 }
