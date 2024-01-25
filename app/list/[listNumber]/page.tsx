@@ -7,11 +7,7 @@ import ItemList from '@/src/Components/ItemList';
 import PageList from '@/src/Components/PagesList';
 import E404 from '@/src/Components/E404';
 import Loading from '@/src/Components/Loading';
-
-type ItemType = {
-  id: number, 
-  name: string,
-}
+import type { ItemType } from '@/lib/types';
 
 export default function List({
   params,

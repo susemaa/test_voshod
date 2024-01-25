@@ -4,18 +4,14 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { MyModal } from './modal';
 import Loading from '@/src/Components/Loading';
-
-type ItemType = {
-  name: string,
-  text: string,
-}
+import type { ItemModalType } from '@/lib/types';
 
 export default function ItemModal({
   params: { itemId },
 }: {
   params: { itemId: string };
 }) {
-  const [modalInfo, setModalInfo] = useState<ItemType | null>(null);
+  const [modalInfo, setModalInfo] = useState<ItemModalType | null>(null);
 
   useEffect(() => {
     const fetchItem = async (itemId : number) => {

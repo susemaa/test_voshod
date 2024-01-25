@@ -5,18 +5,14 @@ import axios from 'axios';
 import { MyModal } from '@/app/@modal/(.)item/[itemId]/modal';
 import List from '@/app/list/[listNumber]/page';
 import Loading from '@/src/Components/Loading';
-
-type ItemType = {
-  name: string,
-  text: string,
-}
+import type { ItemModalType } from '@/lib/types';
 
 export default function ItemPage({
   params,
 }: {
   params: { itemId: string };
 }) {
-  const [modalInfo, setModalInfo] = useState<ItemType | null>(null);
+  const [modalInfo, setModalInfo] = useState<ItemModalType | null>(null);
 
   useEffect(() => {
     const fetchItem = async (itemId : number) => {

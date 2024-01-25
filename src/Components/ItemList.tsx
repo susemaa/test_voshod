@@ -1,10 +1,6 @@
 import { Table } from 'react-bootstrap';
 import Link from 'next/link';
-
-type ItemType = {
-  id: number;
-  name: string;
-}
+import type { ItemType } from '@/lib/types';
 
 export default function ItemList({
   title,
