@@ -1,13 +1,19 @@
+'use client'
+
 import React from 'react';
+import { usePathname } from 'next/navigation'
 import Link from 'next/link';
 import { Table, Col } from 'react-bootstrap';
 
 type PageListProps = {
   pagesAmount: number;
-  active: number;
+  active?: number;
 };
 
 const PageList: React.FC<PageListProps> = React.memo(({ pagesAmount, active }) => {
+  const pathname = usePathname();
+
+  const match = pathname.match(/\/list\/(\d+)/) ?? [];
   //console.log('RENDER');
   return (
     <Col md={4} className="mb-3">
@@ -20,7 +26,7 @@ const PageList: React.FC<PageListProps> = React.memo(({ pagesAmount, active }) =
         <tbody>
           {Array.from({ length: pagesAmount }, (_, index) => (
             <tr key={index + 1}>
-              <td className={active == (index + 1) ? 'bg-primary-subtle' : undefined}>
+              <td className={parseInt(match[1]) === (index + 1) ? 'bg-primary-subtle' : undefined}>
                 <Link href={`/list/${index + 1}`}>
                   Page {index + 1}
                 </Link>
